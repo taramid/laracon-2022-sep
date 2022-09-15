@@ -25,14 +25,19 @@ class Age
         return new self($seconds);
     }
 
+    public static function fromHours(int $hours): self
+    {
+        return self::fromSeconds($hours * self::SECONDS_IN_AN_HOUR);
+    }
+
     public static function fromDays(int $days): self
     {
-        return new self($days * self::HOURS_IN_A_DAY * self::SECONDS_IN_AN_HOUR);
+        return self::fromHours($days * self::HOURS_IN_A_DAY);
     }
 
     public static function fromYears(int $years): self
     {
-        return new self($years * self::DAYS_IN_YEAR * self::HOURS_IN_A_DAY * self::SECONDS_IN_AN_HOUR);
+        return self::fromDays($years * self::DAYS_IN_YEAR);
     }
 
     public function seconds(): int
@@ -40,14 +45,19 @@ class Age
         return $this->seconds;
     }
 
+    public function hours(): int
+    {
+        return $this->seconds / self::SECONDS_IN_AN_HOUR;
+    }
+
     public function days(): float
     {
-        return $this->seconds / self::SECONDS_IN_AN_HOUR / self::HOURS_IN_A_DAY;
+        return $this->hours() / self::HOURS_IN_A_DAY;
     }
 
     public function years(): float
     {
-        return $this->seconds / self::SECONDS_IN_AN_HOUR / self::HOURS_IN_A_DAY / self::DAYS_IN_YEAR;
+        return $this->days() / self::DAYS_IN_YEAR;
     }
 
     public function __toString(): string
