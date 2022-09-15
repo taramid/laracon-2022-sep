@@ -25,11 +25,11 @@ Route::get('/simple', function () {
 
 Route::get('/types', function () {
 
-    $age = \App\Things\Age::fromSeconds(60_000);
-    echo '<br>' . $age->tell();
+    $junior = \App\Things\Age::fromSeconds(60_000);
 
-    $age = \App\Things\Age::fromYears(44);
-    echo '<br>' . $age->tell();
+    $elder = \App\Things\Age::fromYears(44);
+
+    echo $junior . '<br><br>' . $elder;
 
     dd();
 })->name('types');

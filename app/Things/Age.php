@@ -50,8 +50,14 @@ class Age
         return $this->seconds / self::SECONDS_IN_AN_HOUR / self::HOURS_IN_A_DAY / self::DAYS_IN_YEAR;
     }
 
-    public function tell(): string
+    public function __toString(): string
     {
-        return $this->seconds() . ' second(s). What is ' . $this->days() . ' day(s). What is ' . $this->years() . ' year(s)';
+        return <<<HTML
+            {$this->seconds()} second(s)
+            <br>
+            {$this->days()} days(s)
+            <br>
+            {$this->years()} years(s)
+HTML;
     }
 }
