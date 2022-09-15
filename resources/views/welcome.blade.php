@@ -26,5 +26,7 @@
 
         <p><a href="{{ route('types') }}">Types</a></p>
 
+        <p><a href="{{ route('citizens') }}">Citizens</a></p>
+
     </body>
 </html>

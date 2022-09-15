@@ -33,3 +33,12 @@ Route::get('/types', function () {
 
     dd();
 })->name('types');
+
+Route::get('/citizens', function () {
+
+    $raven = new \App\Things\Citizen('Robert', \App\Things\Creature::Raven, years: 14);
+
+    echo $raven;
+
+    dd();
+})->name('citizens');
