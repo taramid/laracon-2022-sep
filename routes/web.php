@@ -36,7 +36,7 @@ Route::get('/types', function () {
 
 Route::get('/citizens', function () {
 
-    $raven = new \App\Things\Citizen('Robert', \App\Things\Creature::Raven, years: 14);
+    $raven = new \App\Things\Citizen('Robert', \App\Things\Critter::RAVEN, years: 14);
 
     echo $raven;
 

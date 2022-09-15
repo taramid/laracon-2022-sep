@@ -4,6 +4,7 @@ namespace App\Things;
 
 use App\Things\Age;
 use App\Things\Creature;
+use App\Things\Critter;
 
 class Citizen
 {
@@ -11,7 +12,7 @@ class Citizen
 
     public function __construct(
         private string   $name = 'Jake',
-        private Creature $creature = Creature::Raven,
+        private string $critter = Critter::RAVEN,
                          $years = 2
     )
     {
@@ -20,6 +21,6 @@ class Citizen
 
     public function __toString(): string
     {
-        return "{$this->name} is {$this->age->years()}";
+        return "{$this->critter} {$this->name} is {$this->age->years()}";
     }
 }
