@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/simple', function () {
+    //
+    $simpleNumberGenerator = new \App\Things\Simple(to: 1_024);
+    return iterator_to_array($simpleNumberGenerator->get());
+})->name('simple');
