@@ -22,3 +22,14 @@ Route::get('/simple', function () {
     $simpleNumberGenerator = new \App\Things\Simple(to: 1_024);
     return iterator_to_array($simpleNumberGenerator->get());
 })->name('simple');
+
+Route::get('/types', function () {
+
+    $age = \App\Things\Age::fromSeconds(60_000);
+    echo '<br>' . $age->tell();
+
+    $age = \App\Things\Age::fromYears(44);
+    echo '<br>' . $age->tell();
+
+    dd();
+})->name('types');

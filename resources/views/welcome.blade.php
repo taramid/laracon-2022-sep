@@ -20,9 +20,11 @@
             }
         </style>
     </head>
-    <body class="antialiased">
+    <body class="antialiased" style="padding: 1rem;">
 
         <p><a href="{{ route('simple') }}">Simple Number Generator</a></p>
+
+        <p><a href="{{ route('types') }}">Types</a></p>
 
     </body>
 </html>
