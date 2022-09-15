@@ -5,3 +5,5 @@
 <p><code>yield</code></p>
 
 <p><code>public static function a(): self</code></p>
+
+<p><code>backed enums</code></p>

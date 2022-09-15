@@ -2,9 +2,12 @@
 
 namespace App\Things;
 
-enum Creature
+enum Creature: string
 {
-    case Jaguar;
-    case Octopus;
-    case Raven;
+    case Jaguar = 'jaguar';
+    case Octopus = 'octopus';
+    case Raven = 'raven';
 }
+
+// https://wiki.php.net/rfc/enumerations#backed_enums
+
